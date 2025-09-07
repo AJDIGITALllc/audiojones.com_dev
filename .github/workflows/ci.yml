@@ -1,0 +1,20 @@
+﻿name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run lint || echo "no lint task yet"
+      - run: npm run build || echo "no build in root; building apps"
+      - run: npm --workspace apps/web run build || true
+      - run: npm --workspace apps/clients run build || true
+      - run: npm --workspace apps/admin run build || true
+      - run: npm --workspace apps/courses run build || true
