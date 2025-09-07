@@ -2,7 +2,7 @@
   return (
     <main className="min-h-screen bg-black text-white">
       <section className="px-6 py-20">
-        <h1 className="text-5xl font-extrabold" style={{color:'var(--aj-gold)'}}>
+        <h1 className="text-5xl font-extrabold" style={{ color: 'var(--aj-gold)' }}>
           No suits. No gatekeepers. Just signal.
         </h1>
         <p className="mt-4 text-lg text-zinc-300">
@@ -10,5 +10,5 @@
         </p>
       </section>
     </main>
-  );
+  )
 }

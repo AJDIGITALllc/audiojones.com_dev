@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -26,6 +26,10 @@ body {
 }
 
 /* Audio Jones brand tokens */
-:root{
-  --aj-gold:#FFD700; --aj-teal:#00B3B3; --aj-red:#ED1C24; --aj-black:#000; --aj-bone:#F8F8F8;
+:root {
+  --aj-gold: #ffd700;
+  --aj-teal: #00b3b3;
+  --aj-red: #ed1c24;
+  --aj-black: #000;
+  --aj-bone: #f8f8f8;
 }
