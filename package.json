@@ -5,13 +5,16 @@
                        "packages/*"
                    ],
     "devDependencies":  {
+                            "concurrently":  "^9.2.1",
                             "turbo":  "latest"
                         },
     "name":  "audiojones",
     "scripts":  {
-                    "format":  "turbo run format",
+                    "dev:all":  "turbo run dev --parallel --filter=./apps/web --filter=./apps/clients --filter=./apps/admin --filter=./apps/courses",
+                    "dev":  "concurrently -n web,clients,admin,courses -c auto \"npm -w apps/web run dev\" \"npm -w apps/clients run dev\" \"npm -w apps/admin run dev\" \"npm -w apps/courses run dev\"",
                     "build":  "turbo run build",
-                    "dev":  "turbo run dev --parallel",
-                    "lint":  "turbo run lint"
-                }
+                    "lint":  "turbo run lint",
+                    "format":  "turbo run format"
+                },
+    "packageManager":  "npm@11.4.2"
 }
