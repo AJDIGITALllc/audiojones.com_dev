@@ -1,0 +1,17 @@
+﻿{
+    "private":  true,
+    "workspaces":  [
+                       "apps/*",
+                       "packages/*"
+                   ],
+    "devDependencies":  {
+                            "turbo":  "latest"
+                        },
+    "name":  "audiojones",
+    "scripts":  {
+                    "format":  "turbo run format",
+                    "build":  "turbo run build",
+                    "dev":  "turbo run dev --parallel",
+                    "lint":  "turbo run lint"
+                }
+}

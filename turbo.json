@@ -1,0 +1,29 @@
+﻿{
+    "pipeline":  {
+                     "format":  {
+                                    "dependsOn":  [
+
+                                                  ]
+                                },
+                     "build":  {
+                                   "dependsOn":  [
+                                                     "^build"
+                                                 ],
+                                   "outputs":  [
+                                                   ".next/**",
+                                                   ".svelte-kit/**",
+                                                   "dist/**"
+                                               ]
+                               },
+                     "dev":  {
+                                 "persistent":  true,
+                                 "cache":  false
+                             },
+                     "lint":  {
+                                  "dependsOn":  [
+
+                                                ]
+                              }
+                 },
+    "":  "https://turbo.build/schema.json"
+}
