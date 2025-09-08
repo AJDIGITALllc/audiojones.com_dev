@@ -21,7 +21,10 @@
     "test": "echo \"No tests yet\" && exit 0",
     "prepare": "husky",
     "predev": "kill-port 3000 3001 3002 3003",
-    "dev": "concurrently -n web,clients,admin,courses -c auto \"npm -w apps/web run dev\" \"npm -w apps/clients run dev\" \"npm -w apps/admin run dev\" \"npm -w apps/courses run dev\""
+    "dev": "concurrently -n web,clients,admin,courses -c auto \"npm -w apps/web run dev\" \"npm -w apps/clients run dev\" \"npm -w apps/admin run dev\" \"npm -w apps/courses run dev\"",
+    "env:pull": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\env-pull.ps1",
+    "deploy:preview": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\deploy.ps1 preview",
+    "deploy:prod": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\deploy.ps1 prod"
   },
   "packageManager": "npm@11.4.2",
   "lint-staged": {
