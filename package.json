@@ -22,9 +22,9 @@
     "prepare": "husky",
     "predev": "kill-port 3000 3001 3002 3003",
     "dev": "concurrently -n web,clients,admin,courses -c auto \"npm -w apps/web run dev\" \"npm -w apps/clients run dev\" \"npm -w apps/admin run dev\" \"npm -w apps/courses run dev\"",
-    "env:pull": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\env-pull.ps1",
-    "deploy:preview": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\deploy.ps1 preview",
-    "deploy:prod": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts\\deploy.ps1 prod"
+    "env:pull": "powershell -NoProfile -Command \"foreach($a in 'web','clients','admin','courses'){vercel pull --yes --environment=development --cwd \\\"apps/$a\\\"}\"",
+    "deploy:preview": "powershell -NoProfile -Command \"foreach($a in 'web','clients','admin','courses'){vercel --cwd \\\"apps/$a\\\"}\"",
+    "deploy:prod": "powershell -NoProfile -Command \"foreach($a in 'web','clients','admin','courses'){vercel --prod --cwd \\\"apps/$a\\\"}\""
   },
   "packageManager": "npm@11.4.2",
   "lint-staged": {
